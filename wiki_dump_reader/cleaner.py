@@ -8,7 +8,7 @@ class Cleaner(object):
 
     def clean_text(self, text):
         text = self._remove_file_links(text)
-        text = self._remove_image_links(text)
+        # text = self._remove_image_links(text)
         text = self._remove_external_links(text)
         text = self._remove_refs(text)
         text = self._remove_emphasises(text)

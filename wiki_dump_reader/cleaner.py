@@ -8,7 +8,7 @@ class Cleaner(object):
 
     def clean_text(self, text):
         text = self._remove_file_links(text)
-        # text = self._remove_image_links(text)
+        text = self._remove_image_links(text)
         text = self._remove_external_links(text)
         text = self._remove_refs(text)
         text = self._remove_emphasises(text)
@@ -59,7 +59,7 @@ class Cleaner(object):
                 begin = pattern_end
             else:
                 removed += text[begin]
-                begin += 1
+            begin = max(begin+1, pattern_end)
             pattern_begin = text.find(pattern, begin)
             if pattern_begin == -1:
                 break
